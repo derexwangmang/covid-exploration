@@ -28,7 +28,7 @@ MIN_CASES = 1000
 confirmed = os.path.join(
     BASE_PATH, 
     'csse_covid_19_time_series',
-    'time_series_19-covid-Confirmed.csv')
+    'time_series_covid19_confirmed_global.csv')
 confirmed = data.load_csv_data(confirmed)
 features = []
 targets = []
@@ -71,6 +71,6 @@ ax.set_ylabel('# of confirmed cases')
 ax.set_xlabel("Time (days since Jan 22, 2020)")
 
 ax.set_yscale('log')
-ax.legend(handles, legend, bbox_to_anchor=(0., 1.02, 1., .102), loc=3, ncol=4)
-plt.tight_layout()
-plt.savefig('results/cases_by_country.png')
+ax.legend(handles, legend, bbox_to_anchor=(0., 1.02), loc=3, ncol=5, fontsize='x-small')
+# plt.tight_layout()
+plt.savefig('results/cases_by_country.png', bbox_inches='tight')
